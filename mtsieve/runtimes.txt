@@ -1,0 +1,14 @@
+./mtsieve -s1000 -e20000000 -t1 : 0m0.640s
+
+./mtsieve -s1000 -e20000000 -t2 : 0m0.557s
+
+./mtsieve -s1000 -e20000000 -t3 : 0m0.491s
+
+./mtsieve -s1000 -e20000000 -t4 : 0m0.484s
+
+CPU: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+
+The time does not seem to scale linearly with the number of threads. It does improve, but at 3-4 threads
+the program would get very similar run-times so it seems like the performance plateaus at a certain point.
+It's also possible that there's some unoptimized parts of my program that prevent the runtime from going
+below ~0.480 seconds which means the threads only help up to a certain point.
